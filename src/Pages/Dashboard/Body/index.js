@@ -62,7 +62,10 @@ const Body = () => {
           display: "flex",
           flex: 2,
           flexDirection: "row",
-          background: "red",
+          background: "white",
+          margin: "21px 21px 21px 0",
+          borderRadius: "6px",
+          // background: "red",
         }}
       ></div>
     </div>

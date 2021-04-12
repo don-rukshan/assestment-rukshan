@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React from "react";
+// import { connect } from "react-redux";
 import "./App.css";
 import Routes from "./Routes";
 import LoadingPage from "./common/LoadingPage";
-import { setIsSigningFlag } from "./redux/actions/app/app.ac";
+// import { setIsSigningFlag } from "./redux/actions/app/app.ac";
 import { createBrowserHistory } from "history";
 
 /**

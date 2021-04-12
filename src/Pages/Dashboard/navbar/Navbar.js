@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./styles.css";
 import sos from "../../../assets/Group 323@3x.png";
 
