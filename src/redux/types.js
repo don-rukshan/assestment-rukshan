@@ -1,8 +1,6 @@
 export const SET_IS_SIGNING_FLAG = "@user/setissigningflag";
 
-export const FETCH_USER = "@user/data/fetch";
-export const FETCH_USER_SUCCESS = "@user/data/success";
-export const FETCH_USER_FAILED = "@user/data/failed";
+export const LOGIN_USER = "@login/data/fetch";
 
 export const FETCH_USERS = "@users/list/fetch";
 export const FETCH_USERS_SUCCESS = "@users/list/success";

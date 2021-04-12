@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from "react";
-// import { signInUser } from "../../../redux/api/profile.api";
+import { signInUser } from "../../redux/api/profile.api";
 import { useHistory } from "react-router-dom";
 import bg from "../../assets/bg.jpg";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [invalidUser, setInvalidUser] = useState(false);
 
   const history = useHistory();
 
-  useEffect(() => {
-    if (localStorage.getItem("user-info")) {
-      history.push("/login");
-    }
-  }, []);
-
   const handleLogin = () => {
     console.log(username, password);
-    // signInUser(username, password).then(() => {
-    window.location.href = "/dashboard";
-    // });
-    localStorage.setItem("user-info", JSON.stringify(username));
-    history.push("/login");
+    signInUser(username, password)
+      .then((res) => {
+        console.log("Adoooooooooooo", res);
+        setInvalidUser(false);
+        localStorage.setItem("user-info", JSON.stringify(username));
+        history.push("/dashboard");
+      })
+      .catch(() => {
+        setInvalidUser(true);
+        setTimeout(() => setInvalidUser(false), 2000);
+      });
   };
 
   return (
@@ -118,6 +119,38 @@ const LoginPage = () => {
           </button>
         </div>
       </div>
+
+      {!invalidUser || (
+        <div
+          style={{
+            height: "25px",
+            padding: "15px",
+            position: "absolute",
+            right: 14,
+            top: 14,
+            background: "pink",
+            textAlign: "center",
+            borderRadius: "14px",
+          }}
+        >
+          Invalid User
+          <button
+            style={{
+              background: "none",
+              border: "1px solid rgba(0,0,0,0.15)",
+              height: "25px",
+              width: "25px",
+              textAlign: "center",
+              borderRadius: "12px",
+              marginLeft: "8px",
+              cursor: "pointer",
+            }}
+            onClick={() => setInvalidUser(false)}
+          >
+            X
+          </button>
+        </div>
+      )}
     </div>
   );
 };
