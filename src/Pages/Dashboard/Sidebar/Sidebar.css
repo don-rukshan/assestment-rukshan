@@ -1,8 +1,8 @@
 #sidebar {
-  background: #191975;
+  background: #253243;
   grid-area: sidebar;
-  overflow-y: hidden;
-  padding: 5px;
+  overflow: hidden;
+  /* padding: 5px; */
 }
 
 .sidebar__menu {
@@ -12,13 +12,27 @@
 
 .sidebar__link > img {
   padding: 15px;
+  margin-bottom: 14px;
+}
+
+.sidebar__link > img {
+  padding: 15px;
+  margin-bottom: 14px;
+}
+
+.enabled_btn {
+  cursor: pointer;
+}
+
+.disabled_btn {
+  cursor: not-allowed;
 }
 
 .sidebar__bottom > img {
   padding: 15px;
-  margin-top: 140px;
+  margin-top: calc(100% + 70px);
 }
 
 .active_menu_link > img {
-  background: red;
+  background: #ff124a;
 }

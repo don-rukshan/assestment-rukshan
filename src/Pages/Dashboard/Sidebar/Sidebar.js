@@ -12,25 +12,28 @@ const Sidebar = () => {
     <div id="sidebar">
       <div className="sidebar__menu">
         <div className="sidebar__link active_menu_link">
-          <img width="50" src={monitor} alt="monitor" />
+          <img className="enabled_btn" width="30" src={monitor} alt="monitor" />
         </div>
         <div className="sidebar__link">
-          <img width="50" src={home} alt="home" />
+          <img className="disabled_btn" width="30" src={home} alt="home" />
         </div>
         <div className="sidebar__link">
-          <img width="50" src={camera} alt="camera" />
+          <img className="disabled_btn" width="30" src={camera} alt="camera" />
         </div>
         <div className="sidebar__link">
-          <img width="50" src={people} alt="people" />
+          <img className="disabled_btn" width="30" src={people} alt="people" />
         </div>
         <div className="sidebar__link">
-          <img width="50" src={bag} alt="bag" />
+          <img className="disabled_btn" width="30" src={bag} alt="bag" />
         </div>
         <div className="sidebar__link">
-          <img width="50" src={pc} alt="pc" />
+          <img className="disabled_btn" width="30" src={pc} alt="pc" />
         </div>
+        <div
+          style={{ display: "flex", flex: 1, flexDirection: "column" }}
+        ></div>
         <div className="sidebar__bottom">
-          <img width="50" src={user} alt="user" />
+          <img width="30" src={user} alt="user" />
         </div>
       </div>
     </div>

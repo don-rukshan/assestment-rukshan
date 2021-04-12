@@ -9,7 +9,12 @@ const Navbar = ({ currentTab }) => {
         <a href="#">{currentTab}</a>
       </div>
       <div className="navbar__right">
-        <button> Message </button>
+        <button
+          style={{ cursor: "pointer" }}
+          onClick={() => console.log("message clicked")}
+        >
+          Message
+        </button>
         <a href="#">
           <img width="70" src={sos} alt="sos" />
         </a>

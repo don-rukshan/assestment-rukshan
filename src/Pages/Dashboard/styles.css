@@ -8,9 +8,10 @@ body {
 }
 
 .container {
+  background-color: whitesmoke;
   display: grid;
   height: 100vh;
-  grid-template-columns: 0.25fr 1fr 1fr 1fr;
+  grid-template-columns: 60px 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 3fr;
   grid-template-areas:
     "sidebar nav nav nav"
