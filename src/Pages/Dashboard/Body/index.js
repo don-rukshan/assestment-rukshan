@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { selectUserLogin } from "../../../redux/userLoginSlice";
 
 const Body = () => {
+  const userLoginToken = useSelector(selectUserLogin);
   return (
     <div style={{ display: "flex", flex: 1, flexDirection: "row" }}>
+      {console.log("tokennn", userLoginToken.token)}
       <div
         style={{
           display: "flex",

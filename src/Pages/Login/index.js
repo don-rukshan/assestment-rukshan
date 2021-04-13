@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { signInUser } from "../../redux/api/profile.api";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { signInUser } from "../../redux/api/profile.api";
+import { login } from "../../redux/userLoginSlice";
 import bg from "../../assets/bg.jpg";
 
 import "./styles.css";
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [invalidUser, setInvalidUser] = useState(false);
 
   const history = useHistory();
 
-  const handleLogin = () => {
-    console.log(username, password);
+  const initLoginUser = () => {
     signInUser(username, password)
       .then((res) => {
-        console.log("Response", res);
         setInvalidUser(false);
+        dispatch(login(res.data));
+        console.log(res);
         localStorage.setItem("user-info", JSON.stringify(username));
         history.push("/dashboard");
       })
@@ -53,7 +57,7 @@ const LoginPage = () => {
           />
 
           <div style={{ marginTop: 20 }} />
-          <button onClick={() => handleLogin()} className="btn btn-primary">
+          <button onClick={() => initLoginUser()} className="btn btn-primary">
             Login
           </button>
         </div>
