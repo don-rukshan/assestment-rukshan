@@ -7,17 +7,6 @@
   width: 300px;
 }
 
-.right__side {
-  display: flex;
-  flex: 2;
-  flex-direction: column;
-  height: 100;
-  justify-content: flex-start;
-  align-items: center;
-  background: whitesmoke;
-  border-radius: 30px;
-}
-
 .form_input > button {
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -31,6 +20,17 @@
   cursor: pointer;
 }
 
+.right__side {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  height: 100;
+  justify-content: flex-start;
+  align-items: center;
+  background: whitesmoke;
+  border-radius: 30px;
+}
+
 .right__side > .right__text {
   color: rgba(0, 0, 0, 0.4);
   font-size: 27px;
@@ -39,7 +39,7 @@
   margin-bottom: 21px;
 }
 
-.error_msg {
+.error__msg {
   height: 25px;
   padding: 15px;
   position: absolute;
@@ -51,7 +51,7 @@
   position: absolute;
 }
 
-.error_msg > button {
+.error__msg > button {
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.15);
   height: 25px;
@@ -62,11 +62,18 @@
   cursor: pointer;
 }
 
-.container {
+.outer__container {
   display: flex;
   flex: 1;
   flex-direction: row;
   height: 100vh;
   overflow: hidden;
   background: #253243;
+}
+
+.left__side {
+  display: flex;
+  flex: 2;
+  max-height: 100%;
+  overflow: hidden;
 }
