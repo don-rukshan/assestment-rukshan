@@ -7,7 +7,7 @@ import "./styles.css";
 
 const COLOURS = ["#00aff0", "#25D366", "#5570b7", "#ffc03a", "#ff124a"];
 
-const UserListView = () => {
+const UserListView = ({ setMonitorUser }) => {
   const userListData = useSelector(selectUserList);
 
   return userListData.length > 0
@@ -15,7 +15,7 @@ const UserListView = () => {
         return (
           <ul
             className="listView"
-            onClick={() => console.log("user ID", user.user_id)}
+            onClick={() => setMonitorUser(user.user_id)}
             key={user.user_id}
           >
             <button

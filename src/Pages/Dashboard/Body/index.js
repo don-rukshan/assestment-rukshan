@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getUserList } from "../../../redux/api/profile.api";
+import { getUserList, getUserLogs } from "../../../redux/api/profile.api";
 import { staff } from "../../../redux/userListSlice";
 import { selectUserLogin } from "../../../redux/userLoginSlice";
+import { logs } from "../../../redux/userLogSlice";
 import UserListView from "./userListView";
+import UserLogView from "./userLogView";
 
 import map from "../../../assets/80-cool-grey@3x.png";
 import zoomIn from "../../../assets/Group 572@3x.png";
 import zoomOut from "../../../assets/Group 571@3x.png";
 import arrow from "../../../assets/Path 86@3x.png";
+import bag from "../../../assets/Group 618.png";
 
 import "./styles.css";
 
@@ -16,9 +19,16 @@ const Body = () => {
   const dispatch = useDispatch();
   const userLoginData = useSelector(selectUserLogin);
 
+  const [currentUser, setCurrentUsers] = useState(1);
+  const [logUser, setLogUser] = useState("Select A User");
+
   useEffect(() => {
     initUserList();
   }, [userLoginData]);
+
+  useEffect(() => {
+    initUserLogs();
+  }, [currentUser]);
 
   const initUserList = async () => {
     await getUserList(userLoginData.token).then((res) => {
@@ -35,6 +45,14 @@ const Body = () => {
     });
   };
 
+  const initUserLogs = async () => {
+    await getUserLogs(userLoginData.token, currentUser).then((res) => {
+      setLogUser(res.data.user);
+      console.log(res.data.logs);
+      dispatch(logs(res.data.logs));
+    });
+  };
+
   return (
     <div className="__container">
       <div className="left__box">
@@ -43,7 +61,9 @@ const Body = () => {
           <div className="top__rightbox">Employee</div>
         </div>
         <div className="bottom__row">
-          <UserListView />
+          <UserListView
+            setMonitorUser={(setMonitorUser) => setCurrentUsers(setMonitorUser)}
+          />
         </div>
       </div>
 
@@ -55,7 +75,30 @@ const Body = () => {
           <img className="__arrow" src={arrow} alt="arrow" />
           <img style={{ width: "100%", height: "100%" }} src={map} alt="map" />
         </div>
-        <div className="bottom__row"></div>
+
+        <div className="bottom__row">
+          <div className="top__row">
+            <div className="top__leftbox__fixed">{`History  ( ${logUser} )`}</div>
+            <div className="top__activebox">All</div>
+            <div className="top__rightbox">Location</div>
+            <div className="top__rightbox">Message</div>
+            <div className="top__rightbox">Alert</div>
+            <div className="top__rightbox__icon">
+              <img src={bag} alt="bag" />
+            </div>
+          </div>
+          <div className="bottom__row">
+            <div className="top__leftbox__fixed">Date</div>
+            <div className="top__leftbox__fixed">Alert View</div>
+            <div className="top__leftbox__fixed">Time</div>
+            <div className="top__leftbox__fixed">Location</div>
+          </div>
+          <div>
+            <div className="top__leftbox__fixed">
+              <UserLogView />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

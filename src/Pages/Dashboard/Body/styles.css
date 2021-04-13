@@ -83,11 +83,24 @@
 .right__box > .bottom__row {
   display: flex;
   flex: 3;
-  flex-direction: row;
+  flex-direction: column;
   border-radius: 10px;
-  background: blue;
+  background: white;
   margin-top: 15px;
-  position: relative;
+}
+
+.right__box > .bottom__row > .bottom__row {
+  display: flex;
+  flex-direction: row;
+}
+
+.right__box > .bottom__row > .top__row {
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+  width: 100%;
+  font-weight: 500;
+  font-size: small;
 }
 
 .right__box > .top__row > .map__btn {
@@ -142,6 +155,34 @@
   cursor: pointer;
 }
 
+.logView {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 7px;
+  font-weight: 500;
+  font-size: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.logView > .top__leftbox__fixed {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 1px;
+  text-align: center;
+  justify-content: center;
+  color: black;
+  font-weight: 500;
+  font-size: 14px;
+}
+
 .menuPress {
   position: absolute;
   align-items: right;
@@ -163,4 +204,82 @@
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.right__box > .bottom__row > .top__row > .top__activebox {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 15px;
+  height: 18px;
+  width: 100%;
+  border-bottom: 3px solid #ff124a;
+  position: relative;
+  background: none;
+  text-align: center;
+  justify-content: center;
+  color: #ff124a;
+  cursor: pointer;
+}
+
+.right__box > .bottom__row > .top__row > .top__rightbox {
+  display: flex;
+  flex: 2;
+  flex-direction: row;
+  padding: 15px;
+  height: 20px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  position: relative;
+  background: none;
+  text-align: center;
+  justify-content: center;
+  color: lightgray;
+  cursor: not-allowed;
+}
+
+.right__box > .bottom__row > .top__row > .top__rightbox__icon {
+  display: flex;
+  flex: 3;
+  flex-direction: row;
+  padding: 15px;
+  height: 20px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  position: relative;
+  justify-content: flex-end;
+  color: lightgray;
+  cursor: not-allowed;
+}
+
+.right__box > .bottom__row > .top__row > .top__rightbox__icon > img {
+  margin-right: 30px;
+}
+
+.right__box > .bottom__row > .top__row > .top__leftbox__fixed {
+  display: flex;
+  flex: 5;
+  flex-direction: row;
+  padding: 15px;
+  height: 20px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  position: relative;
+  background: none;
+  text-align: center;
+  justify-content: center;
+  color: black;
+  font-weight: 700;
+}
+
+.right__box > .bottom__row > .bottom__row > .top__leftbox__fixed {
+  display: flex;
+  flex: 5;
+  flex-direction: row;
+  padding: 7px;
+  text-align: center;
+  justify-content: center;
+  color: black;
+  font-weight: 500;
+  font-size: 14px;
 }
