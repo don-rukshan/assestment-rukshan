@@ -120,7 +120,7 @@
 .zoom__in {
   position: absolute;
   right: 10px;
-  margin-top: 77px;
+  margin-top: 3%;
   cursor: pointer;
   width: 10%;
   height: 20%;
@@ -129,17 +129,17 @@
 .zoom__out {
   position: absolute;
   right: 10px;
-  margin-top: 120px;
+  margin-top: calc(3% + 40px);
   cursor: pointer;
   width: 10%;
   height: 20%;
   overflow: hidden;
 }
 
-.__arrow {
+.right__box > .top__row > .__arrow {
   position: absolute;
-  right: 400px;
-  margin-top: 200px;
+  margin-top: 14%;
+  margin-left: 27%;
   cursor: pointer;
   width: 20px;
   height: 15px;
