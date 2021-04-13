@@ -57,6 +57,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  padding: 25px;
 }
 
 .right__box {
@@ -76,6 +77,7 @@
   border-radius: 10px;
   background: white;
   margin: 0 41px 11px 0;
+  position: relative;
 }
 
 .right__box > .bottom__row {
@@ -85,6 +87,7 @@
   border-radius: 10px;
   background: blue;
   margin-top: 15px;
+  position: relative;
 }
 
 .right__box > .top__row > .map__btn {
@@ -125,4 +128,39 @@
   width: 20px;
   height: 15px;
   color: rgba(0, 0, 0, 0.1);
+}
+
+.listView {
+  position: relative;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  margin: 10px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.menuPress {
+  position: absolute;
+  align-items: right;
+  justify-content: right;
+  right: 8px;
+  height: 40%;
+  top: 17px;
+}
+
+.list__btn {
+  padding: 10px;
+  width: 35px;
+  border-radius: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-right: 20px;
+  font-weight: bolder;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
