@@ -2,6 +2,8 @@
   display: flex;
   flex: 1;
   flex-direction: row;
+  overflow: hidden;
+  height: calc(100vh - 61px);
 }
 
 .__container > .left__box {
@@ -87,6 +89,7 @@
   border-radius: 10px;
   background: white;
   margin-top: 15px;
+  /* max-height: 95%; */
 }
 
 .right__box > .bottom__row > .bottom__row {
