@@ -1,12 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { getUserList } from "../../../redux/api/profile.api";
+import { selectUserList, staff } from "../../../redux/userListSlice";
 import { selectUserLogin } from "../../../redux/userLoginSlice";
 
 const Body = () => {
-  const userLoginToken = useSelector(selectUserLogin);
+  const dispatch = useDispatch();
+  const userLoginData = useSelector(selectUserLogin);
+  const userListData = useSelector(selectUserList);
+
+  useEffect(() => {
+    initUserList();
+  }, [userLoginData]);
+
+  const initUserList = () => {
+    getUserList(userLoginData.token).then((res) => {
+      for (let i = 1; i <= res.data.length; i++) {
+        dispatch(
+          staff(
+            res.data.map((staff) => ({
+              user_id: i++,
+              name: staff.name,
+            }))
+          )
+        );
+      }
+    });
+  };
+
+  console.log(userListData);
   return (
     <div style={{ display: "flex", flex: 1, flexDirection: "row" }}>
-      {console.log("tokennn", userLoginToken.token)}
       <div
         style={{
           display: "flex",
