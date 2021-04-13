@@ -1,0 +1,128 @@
+.__container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+.__container > .left__box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background: white;
+  margin: 21px;
+  border-radius: 10px;
+}
+
+.left__box > .top__row {
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+  width: 100%;
+  font-weight: 550;
+}
+
+.top__leftbox {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 15px;
+  height: 23px;
+  width: 100%;
+  border-bottom: 3px solid #ff124a;
+  position: relative;
+  background: none;
+  text-align: center;
+  justify-content: center;
+  color: #ff124a;
+  cursor: pointer;
+}
+
+.top__rightbox {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 15px;
+  height: 25px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  position: relative;
+  background: none;
+  text-align: center;
+  justify-content: center;
+  color: lightgray;
+  cursor: not-allowed;
+}
+
+.left__box > .bottom__row {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.right__box {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  margin: 21px 21px 21px 0;
+  border-radius: 6px;
+  background: none;
+  align-content: center;
+}
+
+.right__box > .top__row > {
+  display: flex;
+  flex: 2;
+  flex-direction: row;
+  border-radius: 10px;
+  background: white;
+  margin: 0 41px 11px 0;
+}
+
+.right__box > .bottom__row {
+  display: flex;
+  flex: 3;
+  flex-direction: row;
+  border-radius: 10px;
+  background: blue;
+  margin-top: 15px;
+}
+
+.right__box > .top__row > .map__btn {
+  position: absolute;
+  right: 38px;
+  margin-top: 7px;
+  padding: 3px 10px 3px 10px;
+  color: #ff124a;
+  background-color: transparent;
+  border-radius: 20px;
+  border: 2px solid #ff124a;
+  cursor: pointer;
+}
+.zoom__in {
+  position: absolute;
+  right: 10px;
+  margin-top: 77px;
+  cursor: pointer;
+  width: 10%;
+  height: 20%;
+  overflow: hidden;
+}
+.zoom__out {
+  position: absolute;
+  right: 10px;
+  margin-top: 120px;
+  cursor: pointer;
+  width: 10%;
+  height: 20%;
+  overflow: hidden;
+}
+
+.__arrow {
+  position: absolute;
+  right: 400px;
+  margin-top: 200px;
+  cursor: pointer;
+  width: 20px;
+  height: 15px;
+  color: rgba(0, 0, 0, 0.1);
+}

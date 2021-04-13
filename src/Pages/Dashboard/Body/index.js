@@ -4,6 +4,13 @@ import { getUserList } from "../../../redux/api/profile.api";
 import { selectUserList, staff } from "../../../redux/userListSlice";
 import { selectUserLogin } from "../../../redux/userLoginSlice";
 
+import map from "../../../assets/80-cool-grey@3x.png";
+import zoomIn from "../../../assets/Group 572@3x.png";
+import zoomOut from "../../../assets/Group 571@3x.png";
+import arrow from "../../../assets/Path 86@3x.png";
+
+import "./styles.css";
+
 const Body = () => {
   const dispatch = useDispatch();
   const userLoginData = useSelector(selectUserLogin);
@@ -30,72 +37,25 @@ const Body = () => {
 
   console.log(userListData);
   return (
-    <div style={{ display: "flex", flex: 1, flexDirection: "row" }}>
-      <div
-        style={{
-          display: "flex",
-          flex: 1,
-          flexDirection: "column",
-          background: "white",
-          margin: "21px",
-          borderRadius: "6px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            height: "55px",
-            width: "100%",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flex: 1,
-              flexDirection: "row",
-              padding: "15px",
-              height: "55px",
-              width: "100%",
-              background: "green",
-            }}
-          ></div>
-          <div
-            style={{
-              display: "flex",
-              flex: 1,
-              flexDirection: "row",
-              padding: "15px",
-              height: "55px",
-              width: "100%",
-              background: "yellow",
-            }}
-          ></div>
+    <div className="__container">
+      <div className="left__box">
+        <div className="top__row">
+          <div className="top__leftbox">Staff</div>
+          <div className="top__rightbox">Employee</div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flex: 1,
-            flexDirection: "column",
-            background: "blue",
-          }}
-        >
-          {" "}
-          Dashboard
-        </div>
+        <div className="bottom__row">Dashboard</div>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          flex: 2,
-          flexDirection: "row",
-          background: "white",
-          margin: "21px 21px 21px 0",
-          borderRadius: "6px",
-          // background: "red",
-        }}
-      ></div>
+      <div className="right__box">
+        <div className="top__row">
+          <button className="map__btn">Reset Map</button>
+          <img style={{ width: "100%", height: "100%" }} src={map} alt="map" />
+          <img className="zoom__in" src={zoomIn} alt="zoomIn" />
+          <img className="zoom__out" src={zoomOut} alt="zoomOut" />
+          <img className="__arrow" src={arrow} alt="arrow" />
+        </div>
+        <div className="bottom__row"></div>
+      </div>
     </div>
   );
 };
