@@ -22,7 +22,7 @@
 
 .right__side {
   display: flex;
-  flex: 2;
+  flex: 3;
   flex-direction: column;
   height: 100;
   justify-content: flex-start;
@@ -73,7 +73,14 @@
 
 .left__side {
   display: flex;
-  flex: 2;
+  flex: 4;
   max-height: 100%;
   overflow: hidden;
+}
+
+.forgotten__pw {
+  text-align: center;
+  padding: 10px;
+  font-weight: 500;
+  font-size: small;
 }

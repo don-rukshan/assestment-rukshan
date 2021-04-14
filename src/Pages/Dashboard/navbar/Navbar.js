@@ -15,9 +15,7 @@ const Navbar = ({ currentTab }) => {
 
   return (
     <nav className="navbar">
-      <div className="navbar__left">
-        <a href="#">{currentTab}</a>
-      </div>
+      <div className="navbar__left">{currentTab}</div>
       <div className="navbar__right">
         <button
           style={{ cursor: "pointer" }}
@@ -25,15 +23,13 @@ const Navbar = ({ currentTab }) => {
         >
           Message
         </button>
-        <a href="#">
-          <img
-            width="70"
-            onClick={() => handleLogout()}
-            onMouseOver={() => console.log("Press to Logout")}
-            src={sos}
-            alt="sos"
-          />
-        </a>
+        <img
+          width="70"
+          onClick={() => handleLogout()}
+          onMouseOver={() => console.log("Press to Logout")}
+          src={sos}
+          alt="sos"
+        />
       </div>
     </nav>
   );

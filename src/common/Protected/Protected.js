@@ -10,7 +10,7 @@ export const SubComp = ({ loggedIn, Component }) =>
   loggedIn === true ? <Component /> : <Redirect to="/login" />;
 
 Protected.propTypes = {
-  Component: PropTypes.object.isRequired,
+  Component: PropTypes.func.isRequired,
   loggedIn: PropTypes.bool.isRequired,
 };
 

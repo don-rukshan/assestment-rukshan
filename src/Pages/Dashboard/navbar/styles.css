@@ -18,13 +18,12 @@
   color: #a5aaad;
 }
 
-.navbar__left > a {
+.navbar__left {
   margin-right: 30px;
   text-decoration: none;
   color: black;
   font-size: 25px;
   font-weight: 700;
-  padding-bottom: 12px;
 }
 
 .navbar__right {
@@ -33,10 +32,11 @@
   align-items: center;
 }
 
-.navbar__right > a > img {
+.navbar__right > img {
   text-decoration: none;
   margin-top: 12px;
   padding: 7px;
+  cursor: pointer;
 }
 
 .navbar__right > button {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserList, getUserLogs } from "../../../redux/api/profile.api";
 import { staff } from "../../../redux/userListSlice";
@@ -22,8 +22,6 @@ const Body = () => {
   const [currentUser, setCurrentUsers] = useState(1);
   const [logUser, setLogUser] = useState("Select A User");
 
-  const ref = useRef();
-
   useEffect(() => {
     initUserList();
   }, [userLoginData]);
@@ -31,10 +29,6 @@ const Body = () => {
   useEffect(() => {
     initUserLogs();
   }, [currentUser]);
-
-  useEffect(() => {
-    console.log(ref.current.clientHeight);
-  });
 
   const initUserList = async () => {
     await getUserList(userLoginData.token).then((res) => {
@@ -52,11 +46,16 @@ const Body = () => {
   };
 
   const initUserLogs = async () => {
-    await getUserLogs(userLoginData.token, currentUser).then((res) => {
-      setLogUser(res.data.user);
-      console.log(res.data.logs);
-      dispatch(logs(res.data.logs));
-    });
+    await getUserLogs(userLoginData.token, currentUser)
+      .then((res) => {
+        setLogUser(res.data.user);
+        console.log(res.data.logs);
+        dispatch(logs(res.data.logs));
+      })
+      .catch((e) => {
+        alert("Session Timeout !!\nStatus Code 429 (Too Many Requests)");
+        setTimeout((window.location.href = "/login"), 3000);
+      });
   };
 
   return (
@@ -79,12 +78,7 @@ const Body = () => {
           <img className="zoom__in" src={zoomIn} alt="zoomIn" />
           <img className="zoom__out" src={zoomOut} alt="zoomOut" />
           <img className="__arrow" src={arrow} alt="arrow" />
-          <img
-            ref={ref}
-            style={{ width: "100%", height: "100%" }}
-            src={map}
-            alt="map"
-          />
+          <img style={{ width: "100%", height: "100%" }} src={map} alt="map" />
         </div>
 
         <div className="bottom__row">

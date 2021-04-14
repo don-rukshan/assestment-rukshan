@@ -36,7 +36,7 @@ const LoginPage = () => {
       </div>
 
       <div className="right__side">
-        <div className="right__text">Login to continue</div>
+        <div className="right__text">User Login</div>
 
         <div className="form_input">
           <input
@@ -58,6 +58,9 @@ const LoginPage = () => {
           <button onClick={() => initLoginUser()} className="btn btn-primary">
             Login
           </button>
+          <div onClick={() => alert("Contact Admin")} className="forgotten__pw">
+            Forgot <a href="#">Username / Password?</a>
+          </div>
         </div>
       </div>
 
