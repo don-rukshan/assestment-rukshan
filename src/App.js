@@ -1,7 +1,8 @@
 import React from "react";
-import "./App.css";
 import Routes from "./Routes";
 import { createBrowserHistory } from "history";
+
+import "./App.css";
 
 const history = createBrowserHistory();
 

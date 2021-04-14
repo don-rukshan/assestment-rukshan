@@ -1,6 +1,6 @@
 import React from "react";
-import { selectUserLog } from "../../../redux/userLogSlice";
 import { useSelector } from "react-redux";
+import { selectUserLog } from "../../../redux/userLogSlice";
 
 import "./styles.css";
 

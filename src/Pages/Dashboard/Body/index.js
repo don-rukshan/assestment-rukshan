@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { staff } from "../../../redux/userListSlice";
-import { selectUserLogin } from "../../../redux/userLoginSlice";
 import { getUserList, getUserLogs } from "../../../api/profile.api";
+import { staff } from "../../../redux/userListSlice";
 import { logs } from "../../../redux/userLogSlice";
+import { selectUserLogin } from "../../../redux/userLoginSlice";
 import UserListView from "./userListView";
 import UserLogView from "./userLogView";
 
@@ -19,7 +19,7 @@ const Body = () => {
   const dispatch = useDispatch();
   const userLoginData = useSelector(selectUserLogin);
 
-  const [currentUser, setCurrentUsers] = useState(1);
+  const [currentUser, setCurrentUser] = useState(1);
   const [logUser, setLogUser] = useState("Select A User");
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const Body = () => {
         </div>
         <div className="bottom__row">
           <UserListView
-            setMonitorUser={(setMonitorUser) => setCurrentUsers(setMonitorUser)}
+            setMonitorUser={(setMonitorUser) => setCurrentUser(setMonitorUser)}
           />
         </div>
       </div>

@@ -1,11 +1,11 @@
 import React from "react";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Dashboard from "./Pages/Dashboard";
-import Protected from "./common/Protected";
-import Login from "./Pages/Login";
 import { createBrowserHistory } from "history";
 import { selectUserLogin } from "./redux/userLoginSlice";
+import Protected from "./common/Protected";
+import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
 
 const history = createBrowserHistory();
 
