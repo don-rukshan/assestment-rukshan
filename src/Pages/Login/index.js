@@ -21,8 +21,6 @@ const LoginPage = () => {
       .then((res) => {
         setInvalidUser(false);
         dispatch(login(res.data));
-        console.log(res);
-        localStorage.setItem("user-info", JSON.stringify(username));
         history.push("/dashboard");
       })
       .catch(() => {

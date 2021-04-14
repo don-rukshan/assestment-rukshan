@@ -15,7 +15,6 @@ const Routes = () => {
     <Router history={history}>
       <Switch>
         <Route path="/login" exact component={Login} />
-        {/* <Route path="/dashboard" exact component={Dashboard} /> */}
         <Protected
           path="/dashboard"
           Component={Dashboard}
