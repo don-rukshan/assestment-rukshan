@@ -2,33 +2,12 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import { Route, Redirect } from "react-router-dom";
 
-/**
- * Returns a component or Redirect user based on loggedIn status
- */
-const Protected = ({
-  Component,
-  loggedIn,
-  isFirstLogin,
-  basicProfile,
-  ...rest
-}) => (
-  <Route
-    {...rest}
-    render={(props) => (
-      <SubComp
-        loggedIn={loggedIn}
-        props={{ ...props, isFirstLogin, basicProfile }}
-        Component={Component}
-      />
-    )}
-  />
+const Protected = ({ Component, loggedIn }) => (
+  <Route render={() => <SubComp loggedIn={loggedIn} Component={Component} />} />
 );
 
-/**
- * Selects the and returns the sub component based on the loggedIn status
- */
-export const SubComp = ({ loggedIn, props, Component }) =>
-  loggedIn === true ? <Component {...props} /> : <Redirect to="/login" />;
+export const SubComp = ({ loggedIn, Component }) =>
+  loggedIn === true ? <Component /> : <Redirect to="/login" />;
 
 Protected.propTypes = {
   Component: PropTypes.object.isRequired,
