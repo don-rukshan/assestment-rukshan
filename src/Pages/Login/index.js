@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { signInUser } from "../../redux/api/profile.api";
 import { login } from "../../redux/userLoginSlice";
+import { signInUser } from "../../api/profile.api";
+
 import bg from "../../assets/bg.jpg";
 
 import "./styles.css";

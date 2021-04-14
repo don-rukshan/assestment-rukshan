@@ -1,4 +1,3 @@
-import "./Sidebar.css";
 import monitor from "../../../assets/Group 537@3x.png";
 import home from "../../../assets/Group 538@3x.png";
 import people from "../../../assets/Group 548@3x.png";
@@ -6,6 +5,8 @@ import camera from "../../../assets/Group 563@3x.png";
 import bag from "../../../assets/Group 549@3x.png";
 import pc from "../../../assets/Group 555@3x.png";
 import user from "../../../assets/Group 565@3x.png";
+
+import "./styles.css";
 
 const Sidebar = () => {
   return (

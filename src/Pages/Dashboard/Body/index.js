@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getUserList, getUserLogs } from "../../../redux/api/profile.api";
 import { staff } from "../../../redux/userListSlice";
 import { selectUserLogin } from "../../../redux/userLoginSlice";
+import { getUserList, getUserLogs } from "../../../api/profile.api";
 import { logs } from "../../../redux/userLogSlice";
 import UserListView from "./userListView";
 import UserLogView from "./userLogView";
