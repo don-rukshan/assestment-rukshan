@@ -4,13 +4,14 @@
 
 1. Clone the project on your device
 2. `npm i` to install all the dependencies
-3. `npm start` to run the project and automatically port:3000 brower will be opened (If not please open it manually on your browser).
+3. `npm start` to run the project and automatically port:3000 browser will be opened (If not please open it manually on your browser).
 
 ### Assumptions
 
 1. user ids which are receiving from the endpoint have the same value for all the users. After fetching the users, corrected it from the front-end side to carry on the further proceeding.
 2. SOS used as the logout button.
-3. All the other tabs and buttons are not accessible due to given informations of the assestment.
+3. Click on "Live Map" pops up an alert box mentioning the latitude and longitudes of the location.
+4. All the other tabs and buttons are not accessible due to given informations of the assestment.
 
 
 ### Sample Screenshots of the App are attached here.
