@@ -7,17 +7,21 @@
   width: 300px;
 }
 
-.form_input > button {
+.form_input > .btn {
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   padding: 2px;
-  padding-left: 6px;
   width: 308px;
   text-align: center;
   background: #ff124a;
   color: white;
   cursor: pointer;
+  transition: 0.8s;
+}
+
+.btn-primary:hover {
+  background: #1e3799;
 }
 
 .right__side {
