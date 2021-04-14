@@ -186,6 +186,10 @@
   font-size: 14px;
 }
 
+.logView > .top__leftbox__fixed > a {
+  margin-left: 50px;
+}
+
 .menuPress {
   position: absolute;
   align-items: right;

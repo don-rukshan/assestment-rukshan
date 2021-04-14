@@ -24,8 +24,9 @@ const LoginPage = () => {
         dispatch(login(res.data));
         history.push("/dashboard");
       })
-      .catch(() => {
+      .catch((e) => {
         setInvalidUser(true);
+        console.log("User Signin Error", e);
         setTimeout(() => setInvalidUser(false), 2000);
       });
   };

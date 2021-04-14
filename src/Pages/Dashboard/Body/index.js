@@ -31,18 +31,20 @@ const Body = () => {
   }, [currentUser]);
 
   const initUserList = async () => {
-    await getUserList(userLoginData.token).then((res) => {
-      for (let i = 1; i <= res.data.length; i++) {
-        dispatch(
-          staff(
-            res.data.map((staff) => ({
-              user_id: i++,
-              name: staff.name,
-            }))
-          )
-        );
-      }
-    });
+    await getUserList(userLoginData.token)
+      .then((res) => {
+        for (let i = 1; i <= res.data.length; i++) {
+          dispatch(
+            staff(
+              res.data.map((staff) => ({
+                user_id: i++,
+                name: staff.name,
+              }))
+            )
+          );
+        }
+      })
+      .catch((e) => console.log("Get Userlist Error", e));
   };
 
   const initUserLogs = async () => {
@@ -53,6 +55,7 @@ const Body = () => {
         dispatch(logs(res.data.logs));
       })
       .catch((e) => {
+        console.log("Get Userlogs Error", e);
         alert("Session Timeout !!\nStatus Code 429 (Too Many Requests)");
         setTimeout((window.location.href = "/login"), 3000);
       });
