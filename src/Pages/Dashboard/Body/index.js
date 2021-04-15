@@ -82,10 +82,7 @@ const Body = () => {
 
       <div className="right__box">
         {!arrowClick ? (
-          <div
-            className="top__row maprow"
-            style={{ height: arrowClick ? "10%" : null }}
-          >
+          <div className="top__row maprow">
             <button className="map__btn">Reset Map</button>
             <img className="zoom__in" src={zoomIn} alt="zoomIn" />
             <img className="zoom__out" src={zoomOut} alt="zoomOut" />
@@ -100,7 +97,7 @@ const Body = () => {
         ) : (
           <div
             className="top__row maprow"
-            style={{ height: arrowClick ? "10%" : null }}
+            style={{ height: "10%" }}
             onClick={() => handleUpArrow()}
           >
             <img className="map__img" src={map} alt="map" />
