@@ -21,6 +21,7 @@ const Body = () => {
 
   const [currentUser, setCurrentUser] = useState(1);
   const [logUser, setLogUser] = useState("Select A User");
+  const [arrowClick, setArrowClick] = useState(false);
 
   useEffect(() => {
     initUserList();
@@ -61,6 +62,10 @@ const Body = () => {
       });
   };
 
+  const handleUpArrow = () => {
+    setArrowClick(!arrowClick);
+  };
+
   return (
     <div className="__container">
       <div className="left__box">
@@ -76,13 +81,35 @@ const Body = () => {
       </div>
 
       <div className="right__box">
-        <div className="top__row maprow">
-          <button className="map__btn">Reset Map</button>
-          <img className="zoom__in" src={zoomIn} alt="zoomIn" />
-          <img className="zoom__out" src={zoomOut} alt="zoomOut" />
-          <img className="__arrow" src={arrow} alt="arrow" />
-          <img className="map__img" src={map} alt="map" />
-        </div>
+        {!arrowClick ? (
+          <div
+            className="top__row maprow"
+            style={{ height: arrowClick ? "10%" : null }}
+          >
+            <button className="map__btn">Reset Map</button>
+            <img className="zoom__in" src={zoomIn} alt="zoomIn" />
+            <img className="zoom__out" src={zoomOut} alt="zoomOut" />
+            <img
+              className="__arrow"
+              src={arrow}
+              onClick={() => handleUpArrow()}
+              alt="arrow_up"
+            />
+            <img className="map__img" src={map} alt="map" />
+          </div>
+        ) : (
+          <div
+            className="top__row maprow"
+            style={{ height: arrowClick ? "10%" : null }}
+            onClick={() => handleUpArrow()}
+          >
+            <img className="map__img" src={map} alt="map" />
+            <p className="arrow__down">
+              Live Location Map Here
+              <img className="arrow__down__icon" src={arrow} alt="arrow_down" />
+            </p>
+          </div>
+        )}
 
         <div className="bottom__row">
           <div className="top__row">
@@ -103,7 +130,7 @@ const Body = () => {
           </div>
           <div
             className="top__leftbox__fixed"
-            style={{ overflowY: "scroll", maxHeight: "60%" }}
+            style={{ overflowY: "auto", maxHeight: "60%" }}
           >
             <UserLogView />
           </div>

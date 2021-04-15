@@ -1,5 +1,4 @@
 .__container {
-  z-index: 100;
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -47,7 +46,7 @@
   padding: 15px;
   height: 25px;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
   position: relative;
   background: none;
   text-align: center;
@@ -148,6 +147,7 @@
 }
 
 .right__box > .top__row > .__arrow {
+  z-index: 50;
   position: absolute;
   margin-top: 14%;
   margin-left: 27%;
@@ -247,7 +247,7 @@
   padding: 15px;
   height: 20px;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
   position: relative;
   background: none;
   text-align: center;
@@ -263,7 +263,7 @@
   padding: 15px;
   height: 20px;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
   position: relative;
   justify-content: flex-end;
   color: lightgray;
@@ -281,7 +281,7 @@
   padding: 15px;
   height: 20px;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
   position: relative;
   background: none;
   text-align: center;
@@ -300,4 +300,24 @@
   color: black;
   font-weight: 500;
   font-size: 14px;
+}
+
+.arrow__down {
+  position: relative;
+  align-items: center;
+  text-align: center;
+  margin-top: -57px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.arrow__down__icon {
+  position: absolute;
+  transform: rotate(180deg);
+  align-items: center;
+  justify-content: center;
+  height: 15px;
+  width: 20px;
+  margin-top: 27px;
+  left: 50%;
 }
