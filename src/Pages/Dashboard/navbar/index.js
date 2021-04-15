@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../redux/userLoginSlice";
 
 import sos from "../../../assets/Group 323@3x.png";
+import alarm from "../../../assets/alarm.PNG";
 import "./styles.css";
 
 const Navbar = ({ currentTab }) => {
   const dispatch = useDispatch();
 
+  const [messageActive, setMessageActive] = useState(false);
+
   const handleLogout = () => {
     window.location.href = "/login";
     dispatch(logout());
+  };
+
+  const handleMessageClick = () => {
+    setMessageActive(!messageActive);
   };
 
   return (
@@ -18,9 +25,15 @@ const Navbar = ({ currentTab }) => {
       <div className="navbar__left">{currentTab}</div>
       <div className="navbar__right">
         <button
-          style={{ cursor: "pointer" }}
-          onClick={() => console.log("message clicked")}
+          style={{
+            backgroundColor: messageActive ? "#ff124a" : "#ffffff",
+            color: messageActive ? "#ffffff" : "#000000",
+          }}
+          onClick={() => handleMessageClick()}
         >
+          {messageActive ? (
+            <img className="message__active" src={alarm} alt="alarm" />
+          ) : null}
           Message
         </button>
         <img
