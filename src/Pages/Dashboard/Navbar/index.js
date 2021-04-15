@@ -4,6 +4,7 @@ import { logout } from "../../../redux/userLoginSlice";
 
 import sos from "../../../assets/Group 323@3x.png";
 import alarm from "../../../assets/alarm.PNG";
+import radar from "../../../assets/spiral.png";
 import "./styles.css";
 
 const Navbar = ({ currentTab }) => {
@@ -32,7 +33,10 @@ const Navbar = ({ currentTab }) => {
           onClick={() => handleMessageClick()}
         >
           {messageActive ? (
-            <img className="message__active" src={alarm} alt="alarm" />
+            <div>
+              <img className="message__active" src={alarm} alt="alarm" />
+              <img className="message__radar" src={radar} alt="radar" />
+            </div>
           ) : null}
           Message
         </button>
