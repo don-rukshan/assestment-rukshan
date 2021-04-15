@@ -76,12 +76,12 @@ const Body = () => {
       </div>
 
       <div className="right__box">
-        <div className="top__row">
+        <div className="top__row maprow">
           <button className="map__btn">Reset Map</button>
           <img className="zoom__in" src={zoomIn} alt="zoomIn" />
           <img className="zoom__out" src={zoomOut} alt="zoomOut" />
           <img className="__arrow" src={arrow} alt="arrow" />
-          <img style={{ width: "100%", height: "100%" }} src={map} alt="map" />
+          <img className="map__img" src={map} alt="map" />
         </div>
 
         <div className="bottom__row">

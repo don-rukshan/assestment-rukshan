@@ -1,4 +1,5 @@
 .__container {
+  z-index: 100;
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -82,6 +83,17 @@
   position: relative;
 }
 
+.maprow {
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.map__img {
+  height: 100%;
+  width: 100%;
+}
+
 .right__box > .bottom__row {
   display: flex;
   flex: 3;
@@ -89,7 +101,6 @@
   border-radius: 10px;
   background: white;
   margin-top: 15px;
-  /* max-height: 95%; */
 }
 
 .right__box > .bottom__row > .bottom__row {
