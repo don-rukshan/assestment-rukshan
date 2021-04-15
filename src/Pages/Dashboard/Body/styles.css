@@ -46,7 +46,7 @@
   padding: 15px;
   height: 25px;
   width: 100%;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #afabab;
   position: relative;
   background: none;
   text-align: center;
@@ -247,7 +247,7 @@
   padding: 15px;
   height: 20px;
   width: 100%;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #afabab;
   position: relative;
   background: none;
   text-align: center;
@@ -263,7 +263,7 @@
   padding: 15px;
   height: 20px;
   width: 100%;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #afabab;
   position: relative;
   justify-content: flex-end;
   color: lightgray;
@@ -281,7 +281,7 @@
   padding: 15px;
   height: 20px;
   width: 100%;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #afabab;
   position: relative;
   background: none;
   text-align: center;
