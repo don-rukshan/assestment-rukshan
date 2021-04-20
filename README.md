@@ -1,5 +1,3 @@
-## Avantrio Assestment
-
 ### Rukshan Suriyaaratchie
 
 1. Clone the project on your device
